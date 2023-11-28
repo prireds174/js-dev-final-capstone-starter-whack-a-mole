@@ -1,5 +1,6 @@
 {
     "marquee.widgets.npm-stats.packageNames": [
         "js-dev-b2b-final-capstone"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/index.html"
 }
