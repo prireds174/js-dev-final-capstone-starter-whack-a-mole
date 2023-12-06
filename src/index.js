@@ -6,10 +6,10 @@ const score = document.querySelector("#score");
 const timerDisplay = document.querySelector("#timer"); 
 
 let timer;
-let time = 0;
+let time = 10;
 let lastHole = 0;
 let points = 0;
-let difficulty = "easy";
+let difficulty = "normal";
 
 /**
  * Generates a random integer within a range.
@@ -101,10 +101,10 @@ function chooseHole(holes) {
 function gameOver() {
   
   if (time > 0) {
-    let timeoutId = showUp();
+    timeoutId = showUp();
     return timeoutId;
   } else {
-    let gameStopped = stopGame();
+    gameStopped = stopGame();
     return gameStopped;
   }
   
@@ -225,7 +225,6 @@ function startTimer() {
 *
 */
 function whack(event) {
-  console.log("whack!");
   updateScore();
   return points;
 }
@@ -239,8 +238,10 @@ function setEventListeners(){
   
   moles.forEach(
     mole => mole.addEventListener('click', whack));
+
   return moles;
 }
+setEventListeners();
 
 
 
@@ -277,10 +278,12 @@ function startGame(){
   setDuration(10);
   startTimer();
   showUp();
+  clearScore();
+  setEventListeners();
   return "game started";
 }
 
-setEventListeners()
+
 
 startButton.addEventListener("click", startGame);
 
