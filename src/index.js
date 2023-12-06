@@ -237,7 +237,7 @@ function whack(event) {
 function setEventListeners(){
   
   moles.forEach(
-    mole => mole.addEventListener("click", whack, { once : true }));
+    mole => mole.addEventListener("click", whack));
   return moles;
 }
 
