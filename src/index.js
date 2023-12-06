@@ -6,7 +6,7 @@ const score = document.querySelector("#score");
 const timerDisplay = document.querySelector("#timer"); 
 
 let timer;
-let time = 10;
+let time = 0;
 let lastHole = 0;
 let points = 0;
 let difficulty = "normal";
@@ -237,8 +237,7 @@ function whack(event) {
 function setEventListeners(){
   
   moles.forEach(
-    mole => mole.addEventListener('click', whack));
-
+    mole => mole.addEventListener('click', whack, { once: true} ));
   return moles;
 }
 
