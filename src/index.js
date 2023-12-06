@@ -171,7 +171,7 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-  points++;
+  points+= 1;
   score.textContent = points;
   
   return points;
@@ -237,7 +237,7 @@ function whack(event) {
 function setEventListeners(){
   
   moles.forEach(
-    mole => mole.addEventListener('click', whack, { once: true} ));
+    mole => mole.addEventListener("click", whack));
   return moles;
 }
 
@@ -275,10 +275,10 @@ function stopGame(){
 */
 function startGame(){
   setDuration(10);
-  startTimer();
   showUp();
   clearScore();
   setEventListeners();
+  startTimer();
   return "game started";
 }
 
